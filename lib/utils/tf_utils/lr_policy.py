@@ -23,6 +23,8 @@ class MultiStageLR(BaseLR):
         for it_lr in self._lr_stagess:
             if epoch < it_lr[0]:
                 return it_lr[1]
+        else:
+            return self._lr_stagess[-1][1]
 
 
 class LinearIncreaseLR(BaseLR):
